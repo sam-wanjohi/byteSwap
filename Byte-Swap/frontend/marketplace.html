@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Byte Swap</title>
+    <link rel="stylesheet" href="styles/marketplace.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="list-products">
+            <h2>List a New Product</h2>
+            <form id="listProductForm">
+                <label for="productName">productName</label>
+                <input type="text" id="productName" name="productName" required>
+                
+                <label for="productDescription">productDescription</label>
+                <textarea id="productDescription" name="productDescription" required></textarea>
+                
+                <label for="productValue">productValue (in Byte Points)</label>
+                <input type="number" id="productValue" name="productValue" required>
+
+                <label for="productCondition">productCondition(Fresh, Good, Fair)</label>
+                <input type="text" id="productCondition" name="productCondition" required>
+                <label for="productImage">productImage</label>
+                <input type="file" id="productImage" name="productImage" accept="image/*">
+                
+                <button type="submit">List Product</button>
+            </form>
+        </section>
+
+        <section class="product-listings">
+            <h2>Available Products</h2>
+           <img src="images/fish.png" alt="product">
+              <p>Name:Fish</p>
+              <p>Description:Tilapia</p>
+              <p>Value:50 points</p>
+              <p>Condition: Good</p>
+              <button type="submit">List Exchange</button>
+           <img src="images/maize.png" alt="product">
+              <p>Name:Maize</p>
+              <p>Description:white</p>
+              <p>Value:50 points</p>
+              <p>Condition: Fair</p>
+              <button type="submit">List Exchange</button>
+           <img src="images/sweetpotatoe.png" alt="product">
+              <p>Name:Sweet Potatoe</p>
+              <p>Description:White</p>
+              <p>Value:80 points</p>
+              <p>Condition: Good</p>
+              <button type="submit">List Exchange</button>
+            <div id="productsContainer">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="exchange-requests">
+            <h2>Exchange Requests</h2>
+            <div id="exchangeRequestsContainer">
+                <!-- Exchange requests will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Byte Swap. All rights reserved.</p>
+    </footer>
+    <script src="js/marketplace.js"></script>
+</body>
+</html>
+

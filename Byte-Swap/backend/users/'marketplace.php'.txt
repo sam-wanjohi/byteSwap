@@ -1,0 +1,51 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include '../db.php';
+
+// Add a new product to the database
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['productName']) && isset($_POST['productDescription']) && isset($_POST['productValue'])) {
+        $productName = $_POST['productName'];
+        $productDescription = $_POST['productDescription'];
+        $productValue = $_POST['productValue'];
+
+        $stmt = $conn->prepare("INSERT INTO products (name, description, value) VALUES (?, ?, ?)");
+        if ($stmt) {
+            $stmt->bind_param("ssi", $productName, $productDescription, $productValue);
+
+            if ($stmt->execute()) {
+                echo json_encode(["status" => "success", "message" => "Product listed successfully."]);
+            } else {
+                echo json_encode(["status" => "error", "message" => $stmt->error]);
+            }
+
+            $stmt->close();
+        } else {
+            echo json_encode(["status" => "error", "message" => $conn->error]);
+        }
+    } else {
+        echo json_encode(["status" => "error", "message" => "Invalid input."]);
+    }
+}
+
+// Fetch all available products
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $result = $conn->query("SELECT * FROM products");
+
+    if ($result) {
+        $products = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $products[] = $row;
+        }
+
+        echo json_encode(["status" => "success", "products" => $products]);
+    } else {
+        echo json_encode(["status" => "error", "message" => $conn->error]);
+    }
+}
+
+$conn->close();
+?>

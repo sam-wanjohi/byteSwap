@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Byte Swap</title>
+    <link rel="stylesheet" href="styles/register.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <h2>Register</h2>
+            <form id="registerForm" action="../backend/user/register.php" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">phone</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Byte Swap
+    </footer>
+    <script src="js/auth.js"></script>
+</body>
+</html>

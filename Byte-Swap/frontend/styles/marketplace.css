@@ -1,0 +1,137 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #4CAF50;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+}
+
+/* Form styling */
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="number"], 
+textarea, 
+input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Section styles */
+.list-products {
+    margin-bottom: 2rem;
+}
+
+/* Ensure form elements stack vertically */
+.list-products form {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Product item styling */
+.product-item {
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.product-item p {
+    margin: 0.5rem 0;
+}
+
+.product-item button {
+    display: block;
+    margin: 1rem 0;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Product listings section styling */
+.product-listings img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Exchange requests section styling */
+.exchange-requests {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #45a049;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
